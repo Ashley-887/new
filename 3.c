@@ -1,24 +1,21 @@
-//打印100到200间的素数
+//平方数 一个整数，加上100后是完全平方数，再加上168后也是
+//x+100=m^2      
+//x+100+168=n^2
+//找到m，n的关系，用枚举法给m赋值得n，进而求x
+//(m+n)(m-n)=168 i*j=168
+//2<=I,j<=84
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int i=0;
-    for(i=100;i<=200;i++)
-    {
-        if(is_prime(i)==1)
-           printf(" %d",i);
+    int i,j,m,n,x;
+    for(i=2;i<=84;i++){
+        if(168%i==0){
+          j=168/i;
+        }
     }
+    m=(i+j)/2;
+    n=(i-j)/2;
+    printf("x=%d",m^2-100);
+
     return 0;
-}
-//是素数返回1，不是返回0
-int is_prime(int n)
-{
-    int j=0;
-    for(j=2;j<n;j++)
-    {
-        if(n%j==0)
-          return 0;
-    }
-    return 1;
 }
